@@ -2,8 +2,6 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 //
 
-using Microsoft.DotNet.Cli.Utils;
-
 namespace Microsoft.TemplateEngine.Cli.Commands
 {
     /// <summary>
@@ -159,7 +157,7 @@ namespace Microsoft.TemplateEngine.Cli.Commands
                 takenAliases.Add(qualifiedShortName);
                 return;
             }
-            Reporter.Verbose.WriteLine(string.Format(LocalizableStrings.AliasAssignmentCoordinator_Error_ShortAlias, parameter.Name, shortName, qualifiedShortName));
+            errors.Add(string.Format(LocalizableStrings.AliasAssignmentCoordinator_Error_ShortAlias, parameter.Name, shortName, qualifiedShortName));
         }
 
         private static string GetFreeShortName(Func<string, bool> isAliasTaken, string name, string prefix = "")
