@@ -14,7 +14,7 @@ mstest-playwright
 mvc
 nugetconfig
 nunit
-nunit-playwright
+NUnit-playwright
 nunit-test
 page
 proto

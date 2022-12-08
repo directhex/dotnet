@@ -1,15 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <TargetFramework Condition="'$(DotNetBuildFromSource)' == 'true'">net7.0</TargetFramework>
     <OutputType>Exe</OutputType>
-    <Nullable>enable</Nullable>
     <IsPackable>true</IsPackable>
-    <StrongNameKeyId>Open</StrongNameKeyId>
     <PackAsTool>true</PackAsTool>
-    <ToolCommandName>genapi</ToolCommandName>
-    <PackageDescription>Tool to emit Roslyn based source code from input assemblies.</PackageDescription>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,5 +16,4 @@
   <ItemGroup>
     <None Include="$(RepoRoot)LICENSE.txt" PackagePath="LICENSE.txt" Pack="true" />
   </ItemGroup>
-
 </Project>

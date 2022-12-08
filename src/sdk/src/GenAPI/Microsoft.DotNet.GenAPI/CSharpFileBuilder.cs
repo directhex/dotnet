@@ -146,13 +146,11 @@ namespace Microsoft.DotNet.GenAPI
             Stack<INamespaceSymbol> stack = new();
             stack.Push(assemblySymbol.GlobalNamespace);
 
-            while (stack.Count > 0)
+            while (stack.TryPop(out var current))
             {
-                INamespaceSymbol current = stack.Pop();
-
                 yield return current;
 
-                foreach (INamespaceSymbol subNamespace in current.GetNamespaceMembers())
+                foreach (var subNamespace in current.GetNamespaceMembers())
                 {
                     stack.Push(subNamespace);
                 }
